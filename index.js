@@ -18,6 +18,7 @@ app.get('/', function (req, res) {
 });
 // API
 app.use('/api/iot', require('./api/iot'));   //2
+app.use('/api/device', require('./api/device'));   //2
 // Server
 const port = 3221;
 app.listen(port, function(){
