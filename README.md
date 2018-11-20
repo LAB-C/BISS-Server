@@ -18,14 +18,16 @@ const connection = mysql.createPool({
 module.exports = connection;
 ```
 # transaction address #
-## 지갑 등록 ##
-url : hack.cielsoft.me/api/iot (PUSH)
+## iot 기기 등록 ##
+url : hack.cielsoft.me/api/iot/regist (PUSH)
 ### request ###
 
 ```json
 {
-    "iot": "지갑 값",
-    "end": "엔드 디바이스 지갑 값"
+    "uuid": "iot 고유번호",
+    "key": "엔드 디바이스 지갑 값",
+    "name": "iot 기기 이름",
+    "desc": "iot 기기 설명"
 }
 ```
 
@@ -33,9 +35,28 @@ url : hack.cielsoft.me/api/iot (PUSH)
 ```json
 {
     "success" : true,
-    "message" : null, //있는경우 오류 메세지
-    "errors" : null, //있으면 오류
-    "data" : "data" //반응값
+    "message" : null, /*있는경우 오류 메세지*/
+    "errors" : null, /*있으면 오류*/
+    "data" : "data" /*반응값*/
+}
+```
+## 지갑 등록 ##
+url : hack.cielsoft.me/api/iot (PUSH)
+### request ###
+
+```json
+{
+    "iot": "지갑 값",
+}
+```
+
+### response ###
+```json
+{
+    "success" : true,
+    "message" : null, /*있는경우 오류 메세지*/
+    "errors" : null, /*있으면 오류*/
+    "data" : "data" /*반응값*/
 }
 ```
 ## 지갑 주소 확인 ##
@@ -45,9 +66,9 @@ url : hack.cielsoft.me/api/iot/{iot 지갑주소} (GET)
 ```json
 {
     "success" : true,
-    "message" : null, //있는경우 오류 메세지
-    "errors" : null, //있으면 오류
-    "data" : "data" //고유아이디, iot지갑주소, end지갑주소
+    "message" : null, /*있는경우 오류 메세지*/
+    "errors" : null, /*있으면 오류*/
+    "data" : "data" /*반응값*/
 }
 ```
 ## 트랙잭션 아이디 등록 ##
@@ -65,9 +86,9 @@ url : hack.cielsoft.me/api/iot/add (PUSH)
 ```json
 {
     "success" : true,
-    "message" : null, //있는경우 오류 메세지
-    "errors" : null, //있으면 오류
-    "data" : "data" //반응값
+    "message" : null, /*있는경우 오류 메세지*/
+    "errors" : null, /*있으면 오류*/
+    "data" : "data" /*반응값*/
 }
 ```
 # device addressbook #
@@ -88,9 +109,9 @@ url : hack.cielsoft.me/api/device (PUSH)
 ```json
 {
     "success" : true,
-    "message" : null, //있는경우 오류 메세지
-    "errors" : null, //있으면 오류
-    "data" : "data" //반응값
+    "message" : null, /*있는경우 오류 메세지*/
+    "errors" : null, /*있으면 오류*/
+    "data" : "data" /*반응값*/
 }
 ```
 ## 지갑 주소 확인 ##
@@ -100,8 +121,8 @@ url : hack.cielsoft.me/api/device/{device uuid} (GET)
 ```json
 {
     "success" : true,
-    "message" : null, //있는경우 오류 메세지
-    "errors" : null, //있으면 오류
-    "data" : "data" //고유아이디, iot지갑주소, end지갑주소
+    "message" : null, /*있는경우 오류 메세지*/
+    "errors" : null, /*있으면 오류*/
+    "data" : "data" /*반응값*/
 }
 ```
