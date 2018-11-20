@@ -37,18 +37,18 @@ url : hack.cielsoft.me/api/iot/regist/{uuid} (GET)
 ```json
 {
     "success" : true,
-    "message" : null, /*있는경우 오류 메세지*/
-    "errors" : null, /*있으면 오류*/
-    "data" : "data" /*반응값*/
+    "message" : null, 
+    "errors" : null, 
+    "data" : "data"
 }
 ```
 ### response ###
 ```json
 {
     "success" : true,
-    "message" : null, /*있는경우 오류 메세지*/
-    "errors" : null, /*있으면 오류*/
-    "data" : "data" /*반응값*/
+    "message" : null, 
+    "errors" : null, 
+    "data" : "data"
 }
 ```
 ## 지갑 등록 ##
@@ -65,9 +65,9 @@ url : hack.cielsoft.me/api/iot (PUSH)
 ```json
 {
     "success" : true,
-    "message" : null, /*있는경우 오류 메세지*/
-    "errors" : null, /*있으면 오류*/
-    "data" : "data" /*반응값*/
+    "message" : null,
+    "errors" : null,
+    "data" : "data"
 }
 ```
 ## 지갑 주소 확인 ##
@@ -77,9 +77,9 @@ url : hack.cielsoft.me/api/iot/{iot 지갑주소} (GET)
 ```json
 {
     "success" : true,
-    "message" : null, /*있는경우 오류 메세지*/
-    "errors" : null, /*있으면 오류*/
-    "data" : "data" /*반응값*/
+    "message" : null,
+    "errors" : null,
+    "data" : "data"
 }
 ```
 ## 트랙잭션 아이디 등록 ##
@@ -97,9 +97,9 @@ url : hack.cielsoft.me/api/iot/add (PUSH)
 ```json
 {
     "success" : true,
-    "message" : null, /*있는경우 오류 메세지*/
-    "errors" : null, /*있으면 오류*/
-    "data" : "data" /*반응값*/
+    "message" : null,
+    "errors" : null,
+    "data" : "data" 
 }
 ```
 # device addressbook #
@@ -120,9 +120,9 @@ url : hack.cielsoft.me/api/device (PUSH)
 ```json
 {
     "success" : true,
-    "message" : null, /*있는경우 오류 메세지*/
-    "errors" : null, /*있으면 오류*/
-    "data" : "data" /*반응값*/
+    "message" : null,
+    "errors" : null, 
+    "data" : "data" 
 }
 ```
 ## 지갑 주소 확인 ##
@@ -132,8 +132,20 @@ url : hack.cielsoft.me/api/device/{device uuid} (GET)
 ```json
 {
     "success" : true,
-    "message" : null, /*있는경우 오류 메세지*/
-    "errors" : null, /*있으면 오류*/
-    "data" : "data" /*반응값*/
+    "message" : null,
+    "errors" : null,
+    "data" : "data"
+}
+```
+## iot 리스트 ##
+url : hack.cielsoft.me/api/device/get (GET)
+
+### response ###
+```json
+{
+    "success" : true,
+    "message" : null,
+    "errors" : null,
+    "data" : "data" 
 }
 ```
