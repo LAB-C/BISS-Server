@@ -22,7 +22,7 @@ module.exports = connection;
 url : hack.cielsoft.me/api/iot (PUSH)
 ### request ###
 
-```
+```json
 {
     "iot": "지갑 값",
     "end": "엔드 디바이스 지갑 값"
@@ -30,31 +30,31 @@ url : hack.cielsoft.me/api/iot (PUSH)
 ```
 
 ### response ###
-```
+```json
 {
     "success" : true,
     "message" : null, //있는경우 오류 메세지
     "errors" : null, //있으면 오류
-    "data" : data //반응값
+    "data" : "data" //반응값
 }
 ```
 ## 지갑 주소 확인 ##
 url : hack.cielsoft.me/api/iot/{iot 지갑주소} (GET)
 
 ### response ###
-```
+```json
 {
     "success" : true,
     "message" : null, //있는경우 오류 메세지
     "errors" : null, //있으면 오류
-    "data" : data //고유아이디, iot지갑주소, end지갑주소
+    "data" : "data" //고유아이디, iot지갑주소, end지갑주소
 }
 ```
 ## 트랙잭션 아이디 등록 ##
 url : hack.cielsoft.me/api/iot/add (PUSH)
 
 ###  request ###
-```
+```json
 {
     "iot" : "iot지갑주소",
     "transaction" : "트랙잭션 아이디"
@@ -62,12 +62,12 @@ url : hack.cielsoft.me/api/iot/add (PUSH)
 ```
 
 ### respoonse ###
-```
+```json
 {
     "success" : true,
     "message" : null, //있는경우 오류 메세지
     "errors" : null, //있으면 오류
-    "data" : data //반응값
+    "data" : "data" //반응값
 }
 ```
 # device addressbook #
@@ -77,7 +77,7 @@ url : hack.cielsoft.me/api/iot/add (PUSH)
 url : hack.cielsoft.me/api/device (PUSH)
 ### request ###
 
-```
+```json
 {
     "uuid": "uuid값",
     "key": "엔드 디바이스 지갑 값"
@@ -85,23 +85,23 @@ url : hack.cielsoft.me/api/device (PUSH)
 ```
 
 ### response ###
-```
+```json
 {
     "success" : true,
     "message" : null, //있는경우 오류 메세지
     "errors" : null, //있으면 오류
-    "data" : data //반응값
+    "data" : "data" //반응값
 }
 ```
 ## 지갑 주소 확인 ##
 url : hack.cielsoft.me/api/device/{device uuid} (GET)
 
 ### response ###
-```
+```json
 {
     "success" : true,
     "message" : null, //있는경우 오류 메세지
     "errors" : null, //있으면 오류
-    "data" : data //고유아이디, iot지갑주소, end지갑주소
+    "data" : "data" //고유아이디, iot지갑주소, end지갑주소
 }
 ```
