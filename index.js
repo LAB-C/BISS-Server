@@ -13,7 +13,9 @@ app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Headers', 'content-type'); //1
   next();
 });
-
+app.get('/', function (req, res) {
+    res.send('BISS API 서버 입니다.');
+});
 // API
 app.use('/api/iot', require('./api/iot'));   //2
 // Server
