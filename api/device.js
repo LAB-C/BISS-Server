@@ -13,6 +13,16 @@ router.post('/',
         });
     }
 );
+// get list iot 
+router.get('/iot',
+    function(req,res,next) {
+        console.log("sdfsd")
+        connection.query(`SELECT * FROM address_book ORDER BY _id DESC`, function (err, result) {
+            if (err) throw err;
+            res.json(err||!result? util.successFalse(err): util.successTrue(result));
+        });
+    }
+);
 // show
 router.get('/:uuid',
     function(req,res,next) {
@@ -22,15 +32,7 @@ router.get('/:uuid',
         });
     }
 );
-// get list iot 
-router.get('/get',
-    function(req,res,next) {
-        connection.query(`SELECT * FROM address_book ORDER BY _id DESC`, function (err, result) {
-            if (err) throw err;
-            res.json(err||!result? util.successFalse(err): util.successTrue(result));
-        });
-    }
-);
+
 
 module.exports = router;
 
