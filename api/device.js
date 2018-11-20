@@ -1,0 +1,29 @@
+const express  = require('express')
+const router   = express.Router()
+const util     = require('../util')
+const connection = require('../db')
+
+// create
+router.post('/',
+    function(req,res,next){
+        console.log(req.body);
+        connection.query(`INSERT INTO address_book (name, address) VALUES ('${req.body.uuid}', '${req.body.key}')`, function (err, result) {
+            if (err) throw err;
+            res.json(err||!result? util.successFalse(err): util.successTrue(null));
+        });
+    }
+);
+// show
+router.get('/:uuid',
+    function(req,res,next) {
+        connection.query(`SELECT * FROM address_book WHERE name = '${req.params.uuid}' ORDER BY _id DESC LIMIT 1 `, function (err, result) {
+            if (err) throw err;
+            res.json(err||!result? util.successFalse(err): util.successTrue(result));
+        });
+    }
+);
+
+module.exports = router;
+
+
+

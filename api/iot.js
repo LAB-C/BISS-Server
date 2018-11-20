@@ -2,14 +2,13 @@ var express  = require('express');
 var router   = express.Router();
 var util     = require('../util');
 const connection = require('../db')
+
 // create
 router.post('/',
   function(req,res,next){
-    console.log("hello");
     console.log(req.body);
     connection.query(`INSERT INTO address (iot_address, end_address) VALUES ('${req.body.iot}', '${req.body.end}')`, function (err, result) {
       if (err) throw err;
-      console.log("Inserted");
       res.json(err||!result? util.successFalse(err): util.successTrue(null));
     });
   }
@@ -19,7 +18,6 @@ router.get('/:iot_address',
   function(req,res,next) {
     connection.query(`SELECT * FROM address WHERE iot_address = '${req.params.iot_address}' ORDER BY _id DESC LIMIT 1 `, function (err, result) {
       if (err) throw err;
-      console.log("Inserted");
       res.json(err||!result? util.successFalse(err): util.successTrue(result));
     });
   }
