@@ -37,7 +37,7 @@ router.post('/regist',
 // show
 router.get('/regist/:iot',
   function(req,res,next) {
-    connection.query(`SELECT * FROM address_book WHERE name = '${req.params.uuid}' ORDER BY _id DESC LIMIT 1 `, function (err, result) {
+    connection.query(`SELECT * FROM address_book WHERE name = '${req.params.iot}' ORDER BY _id DESC LIMIT 1 `, function (err, result) {
       if (err) throw err;
       res.json(err||!result? util.successFalse(err): util.successTrue(result));
     });
