@@ -30,7 +30,18 @@ url : hack.cielsoft.me/api/iot/regist (PUSH)
     "desc": "iot 기기 설명"
 }
 ```
+## iot 등록 확인 ##
+url : hack.cielsoft.me/api/iot/regist/{uuid} (GET)
 
+### response ###
+```json
+{
+    "success" : true,
+    "message" : null, /*있는경우 오류 메세지*/
+    "errors" : null, /*있으면 오류*/
+    "data" : "data" /*반응값*/
+}
+```
 ### response ###
 ```json
 {

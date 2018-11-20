@@ -28,9 +28,18 @@ router.get('/:iot_address',
 router.post('/regist',
   function(req,res,next){
     console.log(req.body);
-        connection.query(`INSERT INTO device_book (name, address,iot_name,iot_desc) VALUES ('${req.body.uuid}', '${req.body.key}', '${req.body.name}', '${req.body.desc}')`, function (err, result) {
+        connection.query(`INSERT INTO address_book (name, address,iot_name,iot_desc) VALUES ('${req.body.uuid}', '${req.body.key}', '${req.body.name}', '${req.body.desc}')`, function (err, result) {
       if (err) throw err;
       res.json(err||!result? util.successFalse(err): util.successTrue(null));
+    });
+  }
+);
+// show
+router.get('/regist/:iot',
+  function(req,res,next) {
+    connection.query(`SELECT * FROM address_book WHERE name = '${req.params.uuid}' ORDER BY _id DESC LIMIT 1 `, function (err, result) {
+      if (err) throw err;
+      res.json(err||!result? util.successFalse(err): util.successTrue(result));
     });
   }
 );
