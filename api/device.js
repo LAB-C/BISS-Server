@@ -25,7 +25,7 @@ router.get('/:uuid',
 // get list iot 
 router.get('/get',
     function(req,res,next) {
-        connection.query(`SELECT * FROM address_book WHERE ORDER BY _id DESC`, function (err, result) {
+        connection.query(`SELECT * FROM address_book ORDER BY _id DESC`, function (err, result) {
             if (err) throw err;
             res.json(err||!result? util.successFalse(err): util.successTrue(result));
         });
