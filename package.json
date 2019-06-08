@@ -16,6 +16,14 @@
   "bugs": {
     "url": "https://github.com/LAB-C/BISS-Server/issues"
   },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base"
+    ],
+    "rules": {
+      "no-console": 0
+    }
+  },
   "homepage": "https://github.com/LAB-C/BISS-Server#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
