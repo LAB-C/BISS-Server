@@ -1,9 +1,11 @@
 import mongoose, { Schema } from 'mongoose';
 
-var bookSchema = new Schema({
-    title: String,
-    author: String,
-    published_date: { type: Date, default: Date.now  }
+const iotSchema = new Schema({
+  uuid: Schema.Types.String,
+  key: Schema.Types.String,
+  name: Schema.Types.String,
+  desc: Schema.Types.String,
+  userId: Schema.Types.ObjectId,
 });
 
-module.exports = mongoose.model('book', bookSchema);
+module.exports = mongoose.model('iot', iotSchema);
