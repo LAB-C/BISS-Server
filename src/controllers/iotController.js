@@ -1,12 +1,12 @@
 import Iot from '../models/Iot';
 
 export default class IotController {
-  static getIot(uuid) {
-    return Iot.findOne({ uuid });
+  static getIot(uuid, callback) {
+    return Iot.findOne({ uuid }, row => callback(row));
   }
 
-  static getIots() {
-    return Iot.find({});
+  static getIots(callback) {
+    return Iot.find({}, rows => callback(rows));
   }
 
   static async createIot(iotCreate, callback) {
@@ -18,7 +18,7 @@ export default class IotController {
       userId: iotCreate.userId,
     });
     newIot.save((err, row) => {
-      if (err) return err;
+      if (err) console.log(err);
       callback(row);
       return true;
     });

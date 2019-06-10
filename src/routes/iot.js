@@ -3,12 +3,9 @@ import IotController from '../controllers/IotController';
 
 const iotRouter = express.Router();
 
-iotRouter.get('/:uuid', (req, res) => {
-  console.log(IotController.getIot(req.params.uuid));
-  res.send(IotController.getIot(req.params.uuid));
-});
+iotRouter.get('/:uuid', (req, res) => IotController.getIot(req.params.uuid, row => res.json(row)));
 
-iotRouter.get('/', (_, res) => res.send(IotController.getIots()));
+iotRouter.get('/', (_, res) => IotController.getIots(rows => res.json(rows)));
 
 iotRouter.post('/', (req, res) => {
   IotController.createIot({
