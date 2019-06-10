@@ -1,4 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
+import { Schema } from 'mongoose';
+import mongoose from '../database';
 
 const addressSchema = new Schema({
   address: Schema.Types.String,

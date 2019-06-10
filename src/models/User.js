@@ -1,4 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
+import { Schema } from 'mongoose';
+import mongoose from '../database';
 
 const userSchema = new Schema({
   email: Schema.Types.String,
